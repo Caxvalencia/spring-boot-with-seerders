@@ -10,6 +10,6 @@ public class UsersTableSeeder extends Seeder {
     private UserFactory userFactory;
 
     public void run() {
-        this.userFactory.create();
+        this.userFactory.create(50);
     }
 }
