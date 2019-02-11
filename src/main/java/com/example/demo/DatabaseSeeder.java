@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 
 import com.example.demo.seeders.Seeder;
-import com.example.demo.seeders.TransfersTableSeeder;
+import com.example.demo.seeders.UsersTableSeeder;
 
 @Profile("seed")
 @SpringBootApplication
@@ -24,10 +24,11 @@ public class DatabaseSeeder {
 
     @Bean
     public CommandLineRunner runner() {
-        Class<?>[] seeders = { TransfersTableSeeder.class };
+        Class<?>[] seeders = { UsersTableSeeder.class };
 
         return new CommandLineRunner() {
-            private @Autowired AutowireCapableBeanFactory beanFactory;
+            @Autowired
+            private AutowireCapableBeanFactory beanFactory;
 
             @Override
             public void run(String... args) throws Exception {
