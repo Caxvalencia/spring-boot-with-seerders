@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DatabaseSeeder",
+            "request": "launch",
+            "mainClass": "com.example.demo.DatabaseSeeder",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DemoApplication",
             "request": "launch",
             "mainClass": "com.example.demo.DemoApplication",

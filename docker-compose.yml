@@ -1,0 +1,29 @@
+version: '3.2'
+
+services:
+  demo_seeders_mysql:
+    container_name: demo_seeders_mysql
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: demo_seeders
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - data:/var/lib/mysql
+    networks:
+      demo_seeders:
+        ipv4_address: 10.8.0.4
+
+volumes:
+  data:
+    driver: local
+
+networks:
+  demo_seeders:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.8.0.0/16
