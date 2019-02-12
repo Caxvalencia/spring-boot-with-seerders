@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 
-import com.example.demo.seeders.Seeder;
-import com.example.demo.seeders.UsersTableSeeder;
+import com.example.demo.seeds.Seeder;
+import com.example.demo.seeds.UsersTableSeeder;
 
 @Profile("seed")
 @SpringBootApplication

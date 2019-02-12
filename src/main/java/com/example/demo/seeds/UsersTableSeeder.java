@@ -1,4 +1,4 @@
-package com.example.demo.seeders;
+package com.example.demo.seeds;
 
 import com.example.demo.factories.UserFactory;
 
