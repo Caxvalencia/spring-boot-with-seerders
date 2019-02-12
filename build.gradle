@@ -37,10 +37,18 @@ springBoot {
 }
 
 task db_seed(dependsOn: 'classes', type: JavaExec) {
+	def props = new Properties()
+
+	file("src/main/resources/application.properties").withInputStream {
+		props.load(it)
+	}
+
 	classpath = project.sourceSets.main.runtimeClasspath + project.sourceSets.main.resources
 
-	main = 'com.example.demo.DatabaseSeeder'
+	main = "${props.getProperty('seeds.springBoot.mainClassName') ?: 'com.example.demo.DatabaseSeeder'}"
 	args 'seeder arguments'
 	systemProperty 'spring.profiles.active', 'seed'
 	systemProperty 'logging.level.root', 'OFF'
+
+	println "Configurated mainClassName: " + main
 }
